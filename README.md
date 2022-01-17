@@ -43,7 +43,7 @@ arboreto_with_multiprocessing.py \
     mm_mgi_tfs.txt \
     --method grnboost2 \
     --output adj.tsv \
-    --num_workers 20 \
+    --num_workers 12 \
     --seed 777
 ```
     
@@ -51,7 +51,7 @@ arboreto_with_multiprocessing.py \
  And
  
  ```
-pyscenic ctx adj.tsv --annotations_fname SCENIC/resources/motifs-v9-nr.mgi-m0.001-o0.0.tbl --expression_mtx_fname CampNeurons.loom --output arc_reg.csv --num_workers 64 --min_genes 10  databases/mm10__refseq-r80__10kb_up_and_down_tss.mc9nr.feather databases/mm10__refseq-r80__500bp_up_and_100bp_down_tss.mc9nr.feather databases/mm9-tss-centered-10kb-10species.mc9nr.feather databases/mm9-tss-centered-5kb-10species.mc9nr.feather databases/mm9-500bp-upstream-10species.mc9nr.feather
+pyscenic ctx adj.tsv --annotations_fname SCENIC/resources/motifs-v9-nr.mgi-m0.001-o0.0.tbl --expression_mtx_fname CampDataForSCENIC.loom --output reg.csv --num_workers 12 --min_genes 10  databases/mm10__refseq-r80__10kb_up_and_down_tss.mc9nr.feather databases/mm10__refseq-r80__500bp_up_and_100bp_down_tss.mc9nr.feather databases/mm9-tss-centered-10kb-10species.mc9nr.feather databases/mm9-tss-centered-5kb-10species.mc9nr.feather databases/mm9-500bp-upstream-10species.mc9nr.feather
 ```
 
 Additional code that could not be easily pipelined is also available at this repository.
