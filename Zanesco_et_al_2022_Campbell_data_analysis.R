@@ -118,3 +118,69 @@ FeaturePlot(dat, reduction='dbmap',
 # Major Creb1 transcriptional targets in the Arc-ME
 FeaturePlot(dat, reduction='dbmap', 
             features = c('Ism1', 'Atp6v1c2', 'Ccnd2', 'Ccdc39', 'Stc1', 'Mgat3', 'Gmcl1', 'Pik3r2', 'Utp20', 'Asic1', 'Usp45', 'Hspbap1'), pt.size = 1, order = T)
+
+
+
+
+##############################################################################
+# SCENIC
+##############################################################################
+# Write neurons expression values for SCENIC analysis of transcriptional networks
+write.table(as.matrix(dat@assays$RNA@counts), file = 'CampDataForSCENIC.tsv', row.names = T, col.names = T)
+
+# Also save as Loom for downstream SCENIC analysis
+dat_loom <- create('CampDataForSCENIC.loom', data=dat@assays$RNA@counts)
+
+# In terminal
+# GRNs (arboreto):
+# arboreto_with_multiprocessing.py     CampDataForSCENIC.loom    mm_mgi_tfs.txt     --method grnboost2     --output adj.tsv     --num_workers 12     --seed 777
+
+# CTX:
+# pyscenic ctx adj.tsv --annotations_fname /home/davi/Documents/Bioinfo/SCENIC/resources/motifs-v9-nr.mgi-m0.001-o0.0.tbl
+# --expression_mtx_fname CampDataForSCENIC.loom --output reg.csv --num_workers 12
+# /home/davi/Documents/Bioinfo/SCENIC/databases/mm10__refseq-r80__10kb_up_and_down_tss.mc9nr.feather
+# /home/davi/Documents/Bioinfo/SCENIC/databases/mm10__refseq-r80__500bp_up_and_100bp_down_tss.mc9nr.feather
+# /home/davi/Documents/Bioinfo/SCENIC/databases/mm9-tss-centered-10kb-10species.mc9nr.feather
+# /home/davi/Documents/Bioinfo/SCENIC/databases/mm9-tss-centered-5kb-10species.mc9nr.feather
+# /home/davi/Documents/Bioinfo/SCENIC/databases/mm9-500bp-upstream-10species.mc9nr.feather
+
+
+# AUCell:
+# pyscenic aucell CampDataForSCENIC.loom reg.csv --num_workers 11 -o scenic_auc.loom
+
+
+# Reading the output
+
+adj <- read.table('adj.tsv', header = T)
+
+adj_creb <- adj[adj$TF == 'Creb1',]
+adj_creb_filtered <- adj_creb[adj_creb$importance > 1,]
+
+write.table(adj_creb_filtered, file = 'adj_creb_filtered.tsv', row.names = T, col.names = T)
+
+
+# load the library
+library(forcats)
+library(ggplot2)
+library(dplyr)
+
+# Reorder following the value of another column:
+name = adj_creb_filtered$target
+val = adj_creb_filtered$importance
+adj_creb_filtered %>%
+  mutate(name = fct_reorder(name, val)) %>%
+  ggplot( aes(x=name, y=val)) +
+  geom_bar(stat="identity", fill="#f68060", alpha=.6, width=.4) +
+  coord_flip() +
+  xlab("") +
+  theme_bw()
+
+
+
+
+
+
+
+
+
+

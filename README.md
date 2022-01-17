@@ -1,5 +1,5 @@
-# Zanesco_et_al_2022
-This repository contains open-source code for reproducing the analysis of single-cell RNA sequencing data exposed in the manuscript "CREB is involved in the regulation of POMC processing enzymes andα-MSH production in the hypothalamus of mice" submitted to Frontiers in Endocrinology, section Neuroendocrine Science, currently in review.
+# Zanesco _et al_, 2022.
+This repository contains open-source code for reproducing the analysis of single-cell RNA sequencing data exposed in the manuscript "CREB is involved in the regulation of POMC processing enzymes andα-MSH production in the hypothalamus of mice" by Zanesco _et al_, submitted to Frontiers in Endocrinology, section Neuroendocrine Science.
 
 In this study, we harnessed the data from [Campbell et al](https://doi.org/10.1038/nn.4495), consisting of ~20,000 single-cell transcriptomes from the arcuate nucleus and the median eminence (Arc-ME), and used it to identify Creb transcriptional targets.
 
@@ -27,7 +27,7 @@ In this study, we harnessed the data from [Campbell et al](https://doi.org/10.10
   ```
   > R Carraro_et_al_2021_Campbell_Data_Analysis.R
   ```
-  Alternatively, you may open the `Carraro_et_al_2021_Campbell_Data_Analysis.R` script in your favorite IDE (i.g. RStudio) and interactively navigate the code.
+  Alternatively, you may open the `Zanesco_et_al_2022_Campbell_data_analysis.R` script in your favorite IDE (i.g. RStudio) and interactively navigate the code.
   
   
 # Running Arboreto and PySCENIC
@@ -39,7 +39,7 @@ In this study, we harnessed the data from [Campbell et al](https://doi.org/10.10
   
 ```
 arboreto_with_multiprocessing.py \
-    CampNeurons.tsv \
+    CampDataForSCENIC.tsv \
     mm_mgi_tfs.txt \
     --method grnboost2 \
     --output adj.tsv \
