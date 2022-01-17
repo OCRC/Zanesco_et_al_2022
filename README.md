@@ -1,5 +1,5 @@
 # Zanesco _et al_, 2022.
-This repository contains open-source code for reproducing the analysis of single-cell RNA sequencing data exposed in the manuscript "CREB is involved in the regulation of POMC processing enzymes andα-MSH production in the hypothalamus of mice" by Zanesco _et al_, submitted to Frontiers in Endocrinology, section Neuroendocrine Science.
+This repository contains open-source code for reproducing the analysis of single-cell RNA sequencing data exposed in the manuscript "CREB is involved in the regulation of POMC processing enzymes and α-MSH production in the hypothalamus of mice" by Zanesco _et al_, submitted to Frontiers in Endocrinology, section Neuroendocrine Science.
 
 In this study, we harnessed the data from [Campbell et al](https://doi.org/10.1038/nn.4495), consisting of ~20,000 single-cell transcriptomes from the arcuate nucleus and the median eminence (Arc-ME), and used it to identify Creb transcriptional targets.
 
