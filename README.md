@@ -4,9 +4,9 @@ This repository contains open-source code for reproducing the analysis of single
 In this study, we harnessed the data from [Campbell et al](https://doi.org/10.1038/nn.4495), consisting of ~20,000 single-cell transcriptomes from the arcuate nucleus and the median eminence (Arc-ME), and used it to identify Creb transcriptional targets.
 
 # Retrieve data
-  We retrieved gene expression and meta-data matrices from SingleCellPortal. You'll need to sign in with a Google account to continue:
-  - (Gene expression data)[https://singlecell.broadinstitute.org/single_cell/data/public/SCP97/a-molecular-census-of-arcuate-hypothalamus-and-median-eminence-cell-types?filename=expression.txt.gz]
-  - (Metadata)[https://singlecell.broadinstitute.org/single_cell/data/public/SCP97/a-molecular-census-of-arcuate-hypothalamus-and-median-eminence-cell-types?filename=meta.txt]
+  We retrieved gene expression and meta-data matrices from [SingleCellPortal](https://singlecell.broadinstitute.org/single_cell/study/SCP97/a-molecular-census-of-arcuate-hypothalamus-and-median-eminence-cell-types#study-summary). You'll need to sign in with a Google account to continue:
+  - [Gene expression data](https://singlecell.broadinstitute.org/single_cell/data/public/SCP97/a-molecular-census-of-arcuate-hypothalamus-and-median-eminence-cell-types?filename=expression.txt.gz)
+  - [Metadata](https://singlecell.broadinstitute.org/single_cell/data/public/SCP97/a-molecular-census-of-arcuate-hypothalamus-and-median-eminence-cell-types?filename=meta.txt)
 
   Alternatively, download directly from the UNIX (Linux, MacOS) terminal:
   ```
