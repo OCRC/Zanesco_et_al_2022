@@ -25,7 +25,7 @@ In this study, we harnessed the data from [Campbell et al](https://doi.org/10.10
   Main findings can be reproduced by executing the following line in the terminal:
   
   ```
-  > R Carraro_et_al_2021_Campbell_Data_Analysis.R
+  > R Zanesco_et_al_2022_Campbell_data_analysis.R
   ```
   Alternatively, you may open the `Zanesco_et_al_2022_Campbell_data_analysis.R` script in your favorite IDE (i.g. RStudio) and interactively navigate the code.
   
