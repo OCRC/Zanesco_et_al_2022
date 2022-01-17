@@ -21,7 +21,7 @@ In this study, we harnessed the data from [Campbell et al](https://doi.org/10.10
 
 # Single-cell analysis with dbMAP
 
-  For this step, you'll need to have (dbMAP)[https://github.com/davisidarta/dbMAP] installed, along with (Seurat)[https://satijalab.org/seurat] for single-cell analysis in R.
+  For this step, you'll need to have [dbMAP](https://github.com/davisidarta/dbMAP) installed, along with [Seurat](https://satijalab.org/seurat) for single-cell analysis in R.
   Main findings can be reproduced by executing the following line in the terminal:
   
   ```
